@@ -1,0 +1,38 @@
+<div class="layout-detalhe">
+    <!-- Painel Principal -->
+    <div class="painel-principal">
+        <h2>{{oportunidade.titulo}}</h2>
+        
+        <div class="info-grupo">
+            <span class="label">Instituição:</span>
+            <span class="valor">{{oportunidade.instituicao}}</span>
+        </div>
+
+        <div class="info-grupo">
+            <span class="label">Modalidade:</span>
+            <span class="valor">{{oportunidade.modalidade}}</span>
+        </div>
+
+        <div class="info-grupo">
+            <span class="label">Prazo:</span>
+            <span class="valor">{{formatarData oportunidade.prazo}}</span>
+        </div>
+
+        <div class="info-grupo">
+            <span class="label">Descrição:</span>
+            <p class="valor-texto">{{oportunidade.descricao}}</p>
+        </div>
+
+        <a href="/oportunidades" class="btn-voltar">Voltar para a lista</a>
+    </div>
+
+    <!-- Painel Lateral -->
+    <div class="painel-lateral">
+        <h3>Informação principal</h3>
+        <div class="destaque-prazo">
+            <span>Encerra em</span>
+            <strong>{{formatarData oportunidade.prazo}}</strong>
+        </div>
+        <p>Aproveite esta oportunidade!</p>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<section class="hero">
+    <h2>Oportunidades</h2>
+    <p>Encontre oportunidades de forma simples e objetiva.</p>
+    <a href="/oportunidades" class="btn-primario">Conhecer o acervo</a>
+</section>
+
+<hr class="divisor">
+
+<section class="destaques">
+    <h3>Destaques do portal</h3>
+    <div class="grid-destaques">
+        <!-- O #each é um laço de repetição. Para cada "oportunidade" na lista "destaques", ele cria o HTML abaixo. -->
+        {{#each destaques}}
+            <div class="card-destaque">
+                <h4>{{this.titulo}}</h4>
+                <p>Oportunidade em destaque</p>
+                <!-- Link para a página de detalhes usando o ID da oportunidade -->
+                <a href="/oportunidades/{{this.id}}" class="btn-secundario">Ver detalhes</a>
+            </div>
+        {{else}}
+            <!-- O else é como um "if" invertido. Se a lista estiver vazia, mostra essa mensagem. -->
+            <p>Nenhuma oportunidade em destaque no momento.</p>
+        {{/each}}
+    </div>
+</section>

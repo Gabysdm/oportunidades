@@ -1,0 +1,17 @@
+<section class="cabecalho-lista">
+    <h2>Oportunidades cadastradas</h2>
+    <span class="badge">{{oportunidades.length}} registros</span>
+</section>
+
+<div class="lista-oportunidades">
+    <!-- Se existir pelo menos 1 oportunidade no banco... -->
+    {{#if oportunidades.length}}
+        <!-- Percorre todas as oportunidades -->
+        {{#each oportunidades}}
+            <!-- O partial "componente-oportunidade" é reaproveitado para cada item da lista -->
+            {{> componente-oportunidade this}}
+        {{/each}}
+    {{else}}
+        <p class="vazio">Nenhum registro foi encontrado.</p>
+    {{/if}}
+</div>
