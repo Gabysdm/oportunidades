@@ -8,9 +8,10 @@ router.get("/", async (req, res, next) => {
     // Busca apenas 3 oportunidades para serem os "Destaques do portal".
     // limit: 3 significa "traga no máximo 3 registros".
     const destaques = await Oportunidade.findAll({
-      limit: 3,
-      order: [["id", "ASC"]], // Ordem apenas para manter fixo, pode ser aleatória ou por prazo.
-    });
+  limit: 3,
+  order: [["id", "ASC"]], // Ordem apenas para manter fixo, pode ser aleatória ou por prazo.
+  raw: true,
+});
 
     // Renderiza o index.hbs passando os destaques.
     res.render("index", { destaques });

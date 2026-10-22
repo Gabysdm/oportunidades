@@ -10,8 +10,9 @@ router.get("/", async (req, res, next) => {
     // findAll() é o "SELECT * FROM" do SQL. 
     // O order:[["prazo", "ASC"]] significa: ordene pela data do prazo, do menor para o maior (mais próximos primeiro).
     const oportunidades = await Oportunidade.findAll({
-      order: [["prazo", "ASC"]],
-    });
+  raw: true,
+  order: [["prazo", "ASC"]],
+});
 
     // Renderiza a view "listar.hbs" dentro da pasta "oportunidades" e passa a variável "oportunidades".
     res.render("oportunidades/listar", { oportunidades });
@@ -35,7 +36,7 @@ router.get("/:id", async (req, res, next) => {
     }
 
     // findByPk() busca pela Primary Key (ID). É o "SELECT * WHERE id = X".
-    const oportunidade = await Oportunidade.findByPk(id);
+    const oportunidade = await Oportunidade.findByPk(id, { raw: true });
 
     // Se a oportunidade não existir no banco (ex: ID 9999).
     if (!oportunidade) {
