@@ -1,12 +1,12 @@
 Integrantes do projeto: Lindalva Gabrielly, Atson Felipoo, Luiz Henrique e Júlia Pontes
 
-O Portal Oportunidades é uma aplicação web com a função de divulgar bolsas, estágios, cursos, monitorias e seleções para estudantes. A ideia é facilitar o acesso às informações, permitindo listar e ver os detalhes de cada vaga ofertada.
+O Portal Oportunidades tem a função de divulgar bolsas, estágios, cursos, monitorias e seleções para estudantes. A ideia é facilitar o acesso às informações, permitindo listar e ver os detalhes de cada vaga ofertada.
 
 Tecnologias:
 Node.js e Express
 Express Handlebars
 Sequelize e SQLite
-Supertest e Node Test
+Supertest e Node Test 
 
 Modelo de Dados:
 A entidade principal é Oportunidade (models/oportunidade.js), com os seguintes campos:
@@ -27,7 +27,7 @@ Instalar as dependências:
 Iniciar o servidor:
     Bash
     npm start
-    Acesse em: http://localhost:3000
+    O servidor está disponível em: http://localhost:3000
 
 Modo desenvolvimento: npm run dev
 
@@ -39,7 +39,7 @@ GET /saude — Verificação do servidor
 GET /oportunidades — Listagem das oportunidades
 GET /oportunidades/:id — Detalhes de uma oportunidade
 
-Estrutura do Projeto:
+Estrutura dos diretórios:
 app.js: configurações, middlewares e rotas
 server.js: banco e inicialização do servidor
 models/: modelos do Sequelize
